@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cbrady80/landscaping-api.git"
+    "url": "git+https://github.com/cbrady80/cse341-landscaping-api"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cbrady80/landscaping-api/issues"
+    "url": "https://github.com/cbrady80/cse341-landscaping-api/issues"
   },
-  "homepage": "https://github.com/cbrady80/landscaping-api#readme",
+  "homepage": "https://github.com/cbrady80/cse341-landscaping-api#readme",
   "dependencies": {
     "dotenv": "^16.1.4",
     "express": "^4.18.2",
