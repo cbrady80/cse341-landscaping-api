@@ -1,0 +1,24 @@
+{
+  "name": "final_project",
+  "version": "1.0.0",
+  "description": "Landscaping API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cbrady80/landscaping-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cbrady80/landscaping-api/issues"
+  },
+  "homepage": "https://github.com/cbrady80/landscaping-api#readme",
+  "dependencies": {
+    "dotenv": "^16.1.4",
+    "express": "^4.18.2",
+    "mongodb": "^5.6.0"
+  }
+}
