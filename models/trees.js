@@ -40,6 +40,19 @@ const treeSchema = new mongoose.Schema({
       message: '{VALUE} is not supported',
     },
   },
+  imageURL: {
+    type: String,
+    required: false,
+    validate: {
+      validator: (value) =>
+        validator.isURL(value, {
+          protocols: ['http', 'https', 'ftp'],
+          require_tld: true,
+          require_protocol: true,
+        }),
+      message: 'Must be a Valid URL',
+    },
+  },
 });
 
 const Tree = mongoose.model('Tree', treeSchema);

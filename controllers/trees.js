@@ -49,6 +49,7 @@ const addTree = catchAsync(async (req, res, next) => {
     watering: req.body.watering,
     sunlight: req.body.sunlight,
     leafType: req.body.leafType,
+    imageURL: req.body.imageURL,
   });
   const newTree = await Tree.create(tree);
   res.status(201).json({
@@ -73,6 +74,7 @@ const updateTree = catchAsync(async (req, res) => {
     watering: req.body.watering,
     sunlight: req.body.sunlight,
     leafType: req.body.leafType,
+    imageURL: req.body.imageURL,
   };
   const tree = await Tree.findByIdAndUpdate(treeId, changeTree, {
     new: true,
