@@ -4,9 +4,9 @@ const router = express.Router();
 const treesController = require('../controllers/trees');
 const { ensureAuth } = require('../controllers/auth');
 
-router.get('/', ensureAuth, treesController.getAllTrees);
+router.get('/', treesController.getAllTrees);
 
-router.get('/:id', ensureAuth, treesController.getTreeById);
+router.get('/:id', treesController.getTreeById);
 
 router.post('/', ensureAuth, treesController.addTree);
 
