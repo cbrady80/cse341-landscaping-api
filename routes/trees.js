@@ -6,6 +6,8 @@ const treesController = require('../controllers/trees');
 
 router.get('/', treesController.getAllTrees);
 
+router.get('/:leafType', treesController.getTreesByLeafType);
+
 router.get('/:id', treesController.getTreeById);
 
 // router.post('/', ensureAuth, treesController.addTree);

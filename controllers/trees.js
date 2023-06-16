@@ -18,6 +18,18 @@ const getAllTrees = catchAsync(async (req, res) => {
   });
 });
 
+const getTreesByLeafType = catchAsync(async (req, res) => {
+  /*
+  #swagger.description = 'READ deciduous trees.'
+*/
+  const trees = await Tree.find({ leafType: req.params.leafType });
+  res.status(200).json({
+    status: 'success',
+    results: trees.length,
+    data: { trees },
+  });
+});
+
 const getTreeById = catchAsync(async (req, res, next) => {
   /*
   #swagger.description = 'READ a specific tree by id.'
@@ -37,14 +49,14 @@ const addTree = catchAsync(async (req, res, next) => {
   /*
   #swagger.description = 'CREATE a new tree.'
 */
-  if (!req.body.puppyTempName) {
+  if (!req.body.common_name) {
     res.status(400).send({ message: 'Content cannot be empty!' });
     return;
   }
   const tree = new Tree({
-    commonName: req.body.commonName,
-    scientificName: req.body.scientificName,
-    otherName: req.body.otherName,
+    common_name: req.body.common_name,
+    scientific_name: req.body.scientific_name,
+    other_name: req.body.other_name,
     cycle: req.body.cycle,
     watering: req.body.watering,
     sunlight: req.body.sunlight,
@@ -67,9 +79,9 @@ const updateTree = catchAsync(async (req, res) => {
   }
   const treeId = new ObjectId(req.params.id);
   const changeTree = {
-    commonName: req.body.commonName,
-    scientificName: req.body.scientificName,
-    otherName: req.body.otherName,
+    common_name: req.body.common_name,
+    scientific_name: req.body.scientific_name,
+    other_name: req.body.other_name,
     cycle: req.body.cycle,
     watering: req.body.watering,
     sunlight: req.body.sunlight,
@@ -103,6 +115,7 @@ const deleteTree = catchAsync(async (req, res, next) => {
 
 module.exports = {
   getAllTrees,
+  getTreesByLeafType,
   getTreeById,
   addTree,
   updateTree,

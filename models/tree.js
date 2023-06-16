@@ -1,18 +1,18 @@
 const mongoose = require('mongoose');
 mongoose.Schema.Types.String.set('trim', true);
 const treeSchema = new mongoose.Schema({
-  commonName: {
+  common_name: {
     type: String,
     required: [true, 'Need tree common name'],
-    unique: false,
+    unique: true,
     maxLength: [30, 'Common name should be less than 31 characters'],
   },
-  scientificName: {
+  scientific_name: {
     type: String,
     required: [true, 'Need tree scientific name'],
     maxLength: [30, 'Scientific name should be less than 31 characters'],
   },
-  otherName: {
+  other_name: {
     type: String,
     required: false,
     maxLength: [30, 'Other name should be less than 31 characters'],
@@ -43,15 +43,15 @@ const treeSchema = new mongoose.Schema({
   imageURL: {
     type: String,
     required: false,
-    validate: {
-      validator: (value) =>
-        validator.isURL(value, {
-          protocols: ['http', 'https', 'ftp'],
-          require_tld: true,
-          require_protocol: true,
-        }),
-      message: 'Must be a Valid URL',
-    },
+    // validate: {
+    //   validator: (value) =>
+    //     validator.isURL(value, {
+    //       protocols: ['http', 'https', 'ftp'],
+    //       require_tld: true,
+    //       require_protocol: true,
+    //     }),
+    //   message: 'Must be a Valid URL',
+    // },
   },
 });
 
