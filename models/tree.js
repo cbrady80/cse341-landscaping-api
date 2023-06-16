@@ -4,7 +4,7 @@ const treeSchema = new mongoose.Schema({
   commonName: {
     type: String,
     required: [true, 'Need tree common name'],
-    unique: true,
+    unique: false,
     maxLength: [30, 'Common name should be less than 31 characters'],
   },
   scientificName: {
