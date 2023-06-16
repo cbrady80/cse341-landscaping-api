@@ -2,8 +2,8 @@
 const express = require('express');
 const bodyParser = require('body-parser'); // helps us decode the body from an HTTP request
 const mongodb = require('./db/connection');
-// const swaggerUi = require('swagger-ui-express');
-// const swaggerDocument = require('./swagger.json');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
 
 // Instantiate an express object
 const app = express();
@@ -13,7 +13,7 @@ const port = process.env.PORT || 6000;
 
 
 app
-    // .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+    .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
     .use(bodyParser.json())
     .use((req, res, next) => {
         res.setHeader('Access-Control-Allow-Origin', '*');
