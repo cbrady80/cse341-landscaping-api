@@ -1,6 +1,7 @@
 // Import the dependencies
 const express = require('express');
 const bodyParser = require('body-parser'); // helps us decode the body from an HTTP request
+const morgan = require('morgan');
 const mongodb = require('./db/connect');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
@@ -10,6 +11,9 @@ const app = express();
 
 // Save a port number
 const port = process.env.PORT || 6000;
+
+//Logging responses in terminal - handy for dev purposes
+app.use(morgan('dev'));
 
 app
   .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
