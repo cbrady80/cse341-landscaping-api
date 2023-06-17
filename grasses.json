@@ -1,0 +1,50 @@
+[
+  {
+    "name": "fine fescue",
+    "heatTolerant": "true",
+    "coldTolerant": "true",
+    "droughtTolerant": "true",
+    "shadeTolerant": "true",
+    "growingSpeed": "slow"
+  },
+  {
+    "name": "tall fescue",
+    "heatTolerant": "true",
+    "coldTolerant": "true",
+    "droughtTolerant": "true",
+    "shadeTolerant": "true",
+    "growingSpeed": "fast"
+  },
+  {
+    "name": "Kentucky bluegrass",
+    "heatTolerant": "false",
+    "coldTolerant": "true",
+    "droughtTolerant": "false",
+    "shadeTolerant": "false",
+    "growingSpeed": "fast"
+  },
+  {
+    "name": "bermuda grass",
+    "heatTolerant": "true",
+    "coldTolerant": "false",
+    "droughtTolerant": "true",
+    "shadeTolerant": "false",
+    "growingSpeed": "fast"
+  },
+  {
+    "name": "St. Augustine grass",
+    "heatTolerant": "true",
+    "coldTolerant": "false",
+    "droughtTolerant": "false",
+    "shadeTolerant": "false",
+    "growingSpeed": "fast"
+  },
+  {
+    "name": "buffalo grass",
+    "heatTolerant": "true",
+    "coldTolerant": "true",
+    "droughtTolerant": "true",
+    "shadeTolerant": "false",
+    "growingSpeed": "fast"
+  }
+]

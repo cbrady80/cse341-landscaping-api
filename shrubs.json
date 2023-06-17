@@ -1,0 +1,58 @@
+[
+  {
+    "name": "oleander",
+    "growingZones": "8-10",
+    "sunlight": ["full sun"],
+    "height": "4-8' tall",
+    "waterRequirement": "low"
+  },
+  {
+    "name": "old fashioned weigela",
+    "growingZones": "5-9",
+    "sunlight": ["Full sun", "part shade"],
+    "height": "6-9' tall",
+    "waterRequirement": "medium"
+  },
+  {
+    "name": "Japanese barberry",
+    "growingZones": "4-8",
+    "sunlight": ["full sun"],
+    "height": "3-6' tall",
+    "waterRequirement": "low"
+  },
+  {
+    "name": "sweet briar rose",
+    "growingZones": "4-9",
+    "sunlight": ["full sun"],
+    "height": "6-10' tall",
+    "waterRequirement": "medium"
+  },
+  {
+    "name": "glossy abelia",
+    "growingZones": "6-9",
+    "sunlight": ["full sun", "part shade"],
+    "height": "3-4' tall",
+    "waterRequirement": "medium"
+  },
+  {
+    "name": "black chokeberry",
+    "growingZones": "3-8",
+    "sunlight": ["full sun", "part shade"],
+    "height": "2-3' tall",
+    "waterRequirement": "medium"
+  },
+  {
+    "name": "azalea",
+    "growingZones": "5-8",
+    "sunlight": ["full sun", "part shade"],
+    "height": "6-10' tall",
+    "waterRequirement": "medium"
+  },
+  {
+    "name": "hydrangea",
+    "growingZones": "3-9",
+    "sunlight": ["part shade"],
+    "height": "3-5' tall",
+    "waterRequirement": "medium"
+  }
+]

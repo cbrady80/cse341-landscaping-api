@@ -1,0 +1,58 @@
+[
+  {
+    "name": "dahlia",
+    "growingZones": "3-11",
+    "sunlight": ["full sun"],
+    "colors": ["pink", "red", "yellow", "white", "orange", "lavender"],
+    "waterRequirement": "medium"
+  },
+  {
+    "name": "begonia",
+    "growingZones": "2-11",
+    "sunlight": ["part shade", "shade"],
+    "colors": ["pink", "red", "yellow", "white", "orange"],
+    "waterRequirement": "medium"
+  },
+  {
+    "name": "coreopsis",
+    "growingZones": "3-10",
+    "sunlight": ["full sun"],
+    "colors": ["yellow", "orange"],
+    "waterRequirement": "medium"
+  },
+  {
+    "name": "clematis",
+    "growingZones": "3-11",
+    "sunlight": ["full sun", "part shade"],
+    "colors": ["purple", "blue", "pink", "white", "red"],
+    "waterRequirement": "medium"
+  },
+  {
+    "name": "blanket flower",
+    "growingZones": "3-10",
+    "sunlight": ["full sun"],
+    "colors": ["red", "orange", "yellow"],
+    "waterRequirement": "low"
+  },
+  {
+    "name": "black-eyed susan",
+    "growingZones": "4-9",
+    "sunlight": ["full sun"],
+    "colors": ["yellow"],
+    "waterRequirement": "low"
+  },
+  {
+    "name": "English daisy",
+    "growingZones": "4-8",
+    "sunlight": ["part shade"],
+    "colors": ["pink", "white", "red"],
+    "waterRequirement": "medium"
+  },
+  {
+    "name": "impatiens",
+    "growingZones": "10-11",
+    "sunlight": ["part shade"],
+    "colors": ["orange", "purple", "yellow", "pink", "white", "red"],
+    "waterRequirement": "high"
+  }
+]
