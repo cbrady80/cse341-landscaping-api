@@ -6,11 +6,10 @@ const shrubsController = require('../controllers/shrubs');
 
 //Get all shrubs in database
 router.get('/', shrubsController.getAllShrubs);
+//Get a list of shrubs with a particular light requirement (full sun, part shade)
+router.get('/:sunlight', shrubsController.getShrubsByLightRequirement);
 //Get a specific shrub by id
 router.get('/:id', shrubsController.getShrubById);
-//Get a list of shrubs with a particular light requirement (full sun, part shade)
-router.get('/:lightRequirement', shrubsController.getShrubsByLightRequirement);
-
 // router.post('/', ensureAuth, shrubsController.addShrub);
 router.post('/addShrub', shrubsController.addShrub);
 // router.put('/:id', ensureAuth, shrubsController.updateShrub);
