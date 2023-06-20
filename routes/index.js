@@ -37,7 +37,7 @@ router.use('/', require('./swagger'));
 router.use('/trees', require('./trees'));
 
 //USE request for SHRUBS
-// router.use('/shrubs', require('./shrubs'));
+router.use('/shrubs', require('./shrubs'));
 
 //USE request for GRASSES
 // router.use('/grasses', require('./grasses'));
