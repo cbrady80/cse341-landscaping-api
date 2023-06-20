@@ -1,0 +1,5 @@
+FROM EMILY: I created the shrubs files in the models, controllers, and routes folders,
+but I haven't tested them yet.
+
+I also included an authorization.js file in this notes-for-team folder that shows
+how I did the authorization on the last project.
