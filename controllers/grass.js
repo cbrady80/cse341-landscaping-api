@@ -18,6 +18,18 @@ const getAllGrass = catchAsync(async (req, res) => {
   });
 });
 
+const getGrassByHeatTolerant = catchAsync(async (req, res) => {
+    /*
+    #swagger.description = 'READ deciduous trees.'
+  */
+    const grass = await Grass.find({ heatTolerant: req.params.heatTolerant });
+    res.status(200).json({
+      status: 'success',
+      results: grass.length,
+      data: { grass },
+    });
+  });
+
 const getGrassById = catchAsync(async (req, res, next) => {
   /*
   #swagger.description = 'READ a specific tree by id.'
@@ -100,6 +112,7 @@ const deleteGrass = catchAsync(async (req, res, next) => {
 
 module.exports = {
   getAllGrass,
+  getGrassByHeatTolerant,
   getGrassById,
   addGrass,
   updateGrass,

@@ -6,6 +6,8 @@ const grassController = require('../controllers/grass');
 
 router.get('/', grassController.getAllGrass);
 
+router.get('/:heatTolerant', grassController.getGrassByHeatTolerant);
+
 router.get('/:id', grassController.getGrassById);
 
 // router.post('/', ensureAuth, grassController.addGrass);
