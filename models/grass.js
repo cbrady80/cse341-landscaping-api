@@ -8,29 +8,44 @@ const grassSchema = new mongoose.schema({
         maxLength: [30, 'Name should be less than 31 characters'],
     },
     heatTolerant: {
-        type: Boolean,
+        type: String,
         required: [true, 'Needs to be true or false'],
-        maxLength: [5, 'Should be less than 6 characters'],
+        enum: {
+            values: [ 'true', 'false'],
+            message: ' {VALUE} is not supported',
+        },
     },
     coldTolerant: {
-        type: Boolean,
+        type: String,
         required: [true, 'Needs to be true or false'],
-        maxLength: [5, 'Should be less than 6 characters'],
+        enum: {
+            values: [ 'true', 'false'],
+            message: ' {VALUE} is not supported',
+        },
     },
     droughtTolerant:{
-        type: Boolean,
+        type: String,
         required: [true, 'Needs to be true or false'],
-        maxLength: [5, 'Should be less than 6 characters'], 
+        enum: {
+            values: [ 'true', 'false'],
+            message: ' {VALUE} is not supported',
+        }, 
     },
     shadeTolerant: {
-        type: Boolean,
+        type: String,
         required: [true, 'Needs to be true or false'],
-        maxLength: [5, 'Should be less than 6 characters'],
+        enum: {
+            values: [ 'true', 'false'],
+            message: ' {VALUE} is not supported',
+        },
     },
     growingSpeed: {
         type: String,
-        required: [true, 'Need growth speed'],
-        maxLength: [10, 'Should be less than 11 characters']
+        required: [true, 'Need to be slow or fast'],
+        enum: {
+            values: [ 'slow', 'fast'],
+            message: ' {VALUE} is not supported',
+        },
     },
 });
 

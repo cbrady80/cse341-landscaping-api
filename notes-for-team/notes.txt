@@ -8,3 +8,7 @@ how I did the authorization on the last project.
 FROM CHERYL 6/21: This looks great Emily, and I like this idea for notes.  I cleaned up the app.js file
 by deleting the way I had connected to MondgoDb and also got rid of my db/connection file since Marc set
 it up to use Mongoose.  
+
+From Daniel 6/21: I have added the controller, models, routes for the grasses.  When I try to test them with 
+thunder client I get 200 codes but I do not see any data and when I type localhost:6000 in a web browser I get
+this site can't be reached message.
