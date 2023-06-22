@@ -10,18 +10,24 @@ const flowersSchema = new mongoose.Schema({
   growingZones: {
     type: String,
     required: [true, 'Need growing zones.'],
-    maxLength: [10, 'Growing zones should be fewer than 10 characters. For example, "5-9"'],
+    maxLength: [
+      10,
+      'Growing zones should be fewer than 10 characters. For example, "5-9"',
+    ],
   },
   sunlight: {
-    type: String,
-    required: [true, 'Sunlight requirement should be full sun, part shade, or shade.'],
+    type: Array,
+    required: [
+      true,
+      'Sunlight requirement should be full sun, part shade, or shade.',
+    ],
     enum: {
       values: ['full sun', 'part shade', 'shade'],
       message: '{VALUE} is not supported',
     },
   },
   colors: {
-    type: String,
+    type: Array,
     required: false,
     maxLength: [30, 'Color should be less than 31 characters'],
   },
