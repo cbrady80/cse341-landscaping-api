@@ -40,7 +40,7 @@ router.use('/trees', require('./trees'));
 router.use('/shrubs', require('./shrubs'));
 
 //USE request for GRASSES
-// router.use('/grasses', require('./grasses'));
+router.use('/grasses', require('./grasses'));
 
 //USE request for FLOWERS
 router.use('/flowers', require('./flowers'));

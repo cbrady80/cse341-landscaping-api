@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const grassController = require('../controllers/grass');
+const grassController = require('../controllers/grasses');
 // const { ensureAuth } = require('../controllers/auth');
 
 router.get('/', grassController.getAllGrass);

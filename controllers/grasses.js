@@ -1,10 +1,10 @@
 const { application } = require('express');
 const mongoose = require('../db/connect');
 const { json } = require('body-parser');
-const catchAsync = require('./../utils/catchAsync');
+const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 const ObjectId = require('mongodb').ObjectId;
-const Grass = require('./../models/grass');
+const Grass = require('../models/grass');
 
 const getAllGrass = catchAsync(async (req, res) => {
   /*
@@ -19,16 +19,16 @@ const getAllGrass = catchAsync(async (req, res) => {
 });
 
 const getGrassByHeatTolerant = catchAsync(async (req, res) => {
-    /*
+  /*
     #swagger.description = 'READ deciduous trees.'
   */
-    const grass = await Grass.find({ heatTolerant: req.params.heatTolerant });
-    res.status(200).json({
-      status: 'success',
-      results: grass.length,
-      data: { grass },
-    });
+  const grass = await Grass.find({ heatTolerant: req.params.heatTolerant });
+  res.status(200).json({
+    status: 'success',
+    results: grass.length,
+    data: { grass },
   });
+});
 
 const getGrassById = catchAsync(async (req, res, next) => {
   /*
@@ -45,7 +45,7 @@ const getGrassById = catchAsync(async (req, res, next) => {
   });
 });
 
-const addGrass= catchAsync(async (req, res, next) => {
+const addGrass = catchAsync(async (req, res, next) => {
   /*
   #swagger.description = 'CREATE a new Grass.'
 */
@@ -60,7 +60,7 @@ const addGrass= catchAsync(async (req, res, next) => {
     droughtTolerant: req.body.droughtTolerant,
     shadeTolerant: req.body.shadeTolerant,
     growingSpeed: req.body.growingSpeed,
-    });
+  });
 
   const newGrass = await Grass.create(grass);
   res.status(201).json({
