@@ -20,7 +20,7 @@ const getAllTrees = catchAsync(async (req, res) => {
 
 const getTreesByLeafType = catchAsync(async (req, res) => {
   /*
-  #swagger.description = 'READ deciduous trees.'
+  #swagger.description = 'READ deciduous or coniferous trees /trees/deciduous or /trees/coniferous.'
 */
   const trees = await Tree.find({ leafType: req.params.leafType });
   res.status(200).json({

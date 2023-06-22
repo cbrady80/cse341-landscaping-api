@@ -2,8 +2,8 @@ const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
   info: {
-    title: 'Real Estate API',
-    description: 'Description',
+    title: 'Landscaping API',
+    description: 'A collection of trees, shrubs, grasses, and flowers',
   },
   host: 'landscapingapi.onrender.com',
   schemes: ['https'],
