@@ -8,12 +8,12 @@ const treeSchema = new mongoose.Schema({
     maxLength: [30, 'Common name should be less than 31 characters'],
   },
   scientific_name: {
-    type: String,
+    type: Array,
     required: [true, 'Need tree scientific name'],
     maxLength: [30, 'Scientific name should be less than 31 characters'],
   },
   other_name: {
-    type: String,
+    type: Array,
     required: false,
     maxLength: [30, 'Other name should be less than 31 characters'],
   },
@@ -28,7 +28,7 @@ const treeSchema = new mongoose.Schema({
     maxLength: [15, 'Watering frequency should be less than 16 characters'],
   },
   sunlight: {
-    type: String,
+    type: Array,
     required: [true, 'Need amount of sunlight required.'],
     maxLength: [15, 'Sunlight requirement should be less than 16 characters'],
   },
