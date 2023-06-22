@@ -37,10 +37,13 @@ router.use('/', require('./swagger'));
 router.use('/trees', require('./trees'));
 
 //USE request for SHRUBS
-// router.use('/shrubs', require('./shrubs'));
+router.use('/shrubs', require('./shrubs'));
 
 //USE request for GRASSES
 // router.use('/grasses', require('./grasses'));
+
+//USE request for FLOWERS
+router.use('/flowers', require('./flowers'));
 
 // USE request for HOME page
 router.use(

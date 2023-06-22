@@ -41,16 +41,7 @@ process.on('uncaughtException', (err, origin) => {
   );
 });
 
-// mongodb.initDb((err, mongodb) => {
-//     if (err) {
-//         console.log(err);
-//     } else {
-//         // Event Listener
-//         app.listen(port);
-//         // Log message
-//         console.log(`Connected to DB and listening at port ${port}`);
-//     }
-// });
+
 mongodb.connectToMongo();
 
 app.listen(port);
