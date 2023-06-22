@@ -21,10 +21,6 @@ const flowersSchema = new mongoose.Schema({
       true,
       'Sunlight requirement should be full sun, part shade, or shade.',
     ],
-    enum: {
-      values: ['full sun', 'part shade', 'shade'],
-      message: '{VALUE} is not supported',
-    },
   },
   colors: {
     type: Array,

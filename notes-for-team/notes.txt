@@ -15,4 +15,4 @@ this site can't be reached message.
 
 From Marc 6/22: I deployed our project to https://landscapingapi.onrender.com and updated the swagger.js file. Also updated the swagger.json with this new link. Worked on grass routes. Made a couple of edits to get working.
 
-6/22: Marc found a problem with tree model. Marc had classified some of the fields as String when they were actually type: Array. The queries were dropping all of the fields that were arrays giving a shortened version of the data. Marc replaced type: String with type: Array and the query works properly now. Marc also changed the flower and shrub models for the same reason.
+6/22: Marc found a problem with tree model. Marc had classified some of the fields as String when they were actually type: Array. The queries were dropping all of the fields that were arrays giving a shortened version of the data. Marc replaced type: String with type: Array and the query works properly now. Marc also changed the flower and shrub models for the same reason. Also had to remove enum in model on arrays as only can be used on type String.
