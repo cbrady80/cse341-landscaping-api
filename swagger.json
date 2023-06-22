@@ -1,8 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Real Estate API",
-    "description": "Description",
+    "title": "Landscaping API",
+    "description": "A collection of trees, shrubs, grasses, and flowers",
     "version": "1.0.0"
   },
   "host": "landscapingapi.onrender.com",
@@ -77,7 +77,7 @@
     },
     "/trees/{leafType}": {
       "get": {
-        "description": "READ deciduous trees.",
+        "description": "READ deciduous or coniferous trees /trees/deciduous or /trees/coniferous.",
         "parameters": [
           {
             "name": "leafType",
@@ -322,6 +322,164 @@
     "/shrubs/delete/{id}": {
       "delete": {
         "description": "DELETE a shrub by id.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/grasses/": {
+      "get": {
+        "description": "READ all grasses.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "CREATE a new Grass.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "common_name": {
+                  "example": "any"
+                },
+                "name": {
+                  "example": "any"
+                },
+                "heatTolerant": {
+                  "example": "any"
+                },
+                "coldtolerant": {
+                  "example": "any"
+                },
+                "droughtTolerant": {
+                  "example": "any"
+                },
+                "shadeTolerant": {
+                  "example": "any"
+                },
+                "growingSpeed": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/grasses/{heatTolerant}": {
+      "get": {
+        "description": "READ deciduous trees.",
+        "parameters": [
+          {
+            "name": "heatTolerant",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/grasses/{id}": {
+      "get": {
+        "description": "READ a specific tree by id.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "put": {
+        "description": "UPDATE a specific Grass by id.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "heatTolerant": {
+                  "example": "any"
+                },
+                "coldtolerant": {
+                  "example": "any"
+                },
+                "droughtTolerant": {
+                  "example": "any"
+                },
+                "shadeTolerant": {
+                  "example": "any"
+                },
+                "growingSpeed": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "delete": {
+        "description": "DELETE a grass by id.",
         "parameters": [
           {
             "name": "id",
