@@ -5,15 +5,189 @@
     "description": "Description",
     "version": "1.0.0"
   },
-  "host": "cse341-realestateapi.onrender.com",
+  "host": "landscapingapi.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
   ],
   "paths": {
-    "/checkLoginStatus": {
+    "/api-docs": {
       "get": {
         "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/trees/": {
+      "get": {
+        "description": "READ all trees.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "CREATE a new tree.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "common_name": {
+                  "example": "any"
+                },
+                "scientific_name": {
+                  "example": "any"
+                },
+                "other_name": {
+                  "example": "any"
+                },
+                "cycle": {
+                  "example": "any"
+                },
+                "watering": {
+                  "example": "any"
+                },
+                "sunlight": {
+                  "example": "any"
+                },
+                "leafType": {
+                  "example": "any"
+                },
+                "imageURL": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/trees/{leafType}": {
+      "get": {
+        "description": "READ deciduous trees.",
+        "parameters": [
+          {
+            "name": "leafType",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/trees/{id}": {
+      "get": {
+        "description": "READ a specific tree by id.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "put": {
+        "description": "UPDATE a specific tree by id.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "common_name": {
+                  "example": "any"
+                },
+                "scientific_name": {
+                  "example": "any"
+                },
+                "other_name": {
+                  "example": "any"
+                },
+                "cycle": {
+                  "example": "any"
+                },
+                "watering": {
+                  "example": "any"
+                },
+                "sunlight": {
+                  "example": "any"
+                },
+                "leafType": {
+                  "example": "any"
+                },
+                "imageURL": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "delete": {
+        "description": "DELETE a tree by id.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/shrubs/": {
+      "get": {
+        "description": "READ all shrubs.",
         "parameters": [],
         "responses": {
           "200": {
@@ -22,13 +196,316 @@
         }
       }
     },
-    "/profile": {
+    "/shrubs/{sunlight}": {
       "get": {
-        "description": "",
+        "description": "READ shrubs with specified light requirement (full sun, part shade).",
+        "parameters": [
+          {
+            "name": "sunlight",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/shrubs/{id}": {
+      "get": {
+        "description": "READ a specific shrub by id.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/shrubs/addShrub": {
+      "post": {
+        "description": "CREATE a new shrub.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "growingZones": {
+                  "example": "any"
+                },
+                "sunlight": {
+                  "example": "any"
+                },
+                "height": {
+                  "example": "any"
+                },
+                "waterRequirement": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/shrubs/update/{id}": {
+      "put": {
+        "description": "UPDATE a specific shrub by id.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "growingZones": {
+                  "example": "any"
+                },
+                "sunlight": {
+                  "example": "any"
+                },
+                "height": {
+                  "example": "any"
+                },
+                "waterRequirement": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/shrubs/delete/{id}": {
+      "delete": {
+        "description": "DELETE a shrub by id.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/flowers/": {
+      "get": {
+        "description": "READ all flowers.",
         "parameters": [],
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "CREATE a new flower.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "common_name": {
+                  "example": "any"
+                },
+                "name": {
+                  "example": "any"
+                },
+                "growingZones": {
+                  "example": "any"
+                },
+                "sunlight": {
+                  "example": "any"
+                },
+                "colors": {
+                  "example": "any"
+                },
+                "waterRequirement": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/flowers/{sunlight}": {
+      "get": {
+        "description": "READ flowers with specified light requirement (full sun, part shade).",
+        "parameters": [
+          {
+            "name": "sunlight",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/flowers/{colors}": {
+      "get": {
+        "description": "READ flowers with specified color.",
+        "parameters": [
+          {
+            "name": "colors",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/flowers/{id}": {
+      "get": {
+        "description": "READ a specific flower by id.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "put": {
+        "description": "UPDATE a specific flower by id.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "growingZones": {
+                  "example": "any"
+                },
+                "sunlight": {
+                  "example": "any"
+                },
+                "colors": {
+                  "example": "any"
+                },
+                "waterRequirement": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "delete": {
+        "description": "DELETE a flower by id.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
           }
         }
       }
