@@ -10,7 +10,7 @@ const swaggerDocument = require('./swagger.json');
 const app = express();
 
 // Save a port number
-const port = process.env.PORT || 6000;
+const port = process.env.PORT || 8000;
 
 //Logging responses in terminal - handy for dev purposes
 app.use(morgan('dev'));
@@ -40,7 +40,6 @@ process.on('uncaughtException', (err, origin) => {
     `Caught exception: ${err}\n` + `Exception origin: ${origin}`
   );
 });
-
 
 mongodb.connectToMongo();
 

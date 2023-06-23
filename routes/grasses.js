@@ -6,7 +6,10 @@ const grassController = require('../controllers/grasses');
 
 router.get('/', grassController.getAllGrass);
 
-router.get('/:heatTolerant', grassController.getGrassByHeatTolerant);
+router.get(
+  '/heatTolerant/:heatTolerant',
+  grassController.getGrassByHeatTolerant
+);
 
 router.get('/:id', grassController.getGrassById);
 

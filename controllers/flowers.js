@@ -19,27 +19,27 @@ const getAllFlowers = catchAsync(async (req, res) => {
 });
 
 const getFlowersByLightRequirement = catchAsync(async (req, res) => {
-    /*
-    #swagger.description = 'READ flowers with specified light requirement (full sun, part shade).'
+  /*
+    #swagger.description = 'READ flowers with specified light requirement /flowers/sunlight/(full sun, part shade, shade).'
   */
-    const flowers = await Flowers.find({ sunlight: req.params.sunlight });
-    res.status(200).json({
-      status: 'success',
-      results: flowers.length,
-      data: { flowers },
-    });
-  });
-
-const getFlowersByColor = catchAsync(async (req, res) => {
-/*
-#swagger.description = 'READ flowers with specified color.'
-*/
-const flowers = await Flowers.find({ sunlight: req.params.colors });
-res.status(200).json({
+  const flowers = await Flowers.find({ sunlight: req.params.sunlight });
+  res.status(200).json({
     status: 'success',
     results: flowers.length,
     data: { flowers },
+  });
 });
+
+const getFlowersByColor = catchAsync(async (req, res) => {
+  /*
+#swagger.description = 'READ flowers with specified color.'
+*/
+  const flowers = await Flowers.find({ colors: req.params.colors });
+  res.status(200).json({
+    status: 'success',
+    results: flowers.length,
+    data: { flowers },
+  });
 });
 
 const getFlowersById = catchAsync(async (req, res, next) => {
@@ -57,7 +57,7 @@ const getFlowersById = catchAsync(async (req, res, next) => {
   });
 });
 
-const addFlowers= catchAsync(async (req, res, next) => {
+const addFlowers = catchAsync(async (req, res, next) => {
   /*
   #swagger.description = 'CREATE a new flower.'
 */
@@ -71,7 +71,7 @@ const addFlowers= catchAsync(async (req, res, next) => {
     sunlight: req.body.sunlight,
     colors: req.body.colors,
     waterRequirement: req.body.waterRequirement,
-    });
+  });
 
   const newFlowers = await Flowers.create(flowers);
   res.status(201).json({

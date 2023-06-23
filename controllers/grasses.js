@@ -20,7 +20,7 @@ const getAllGrass = catchAsync(async (req, res) => {
 
 const getGrassByHeatTolerant = catchAsync(async (req, res) => {
   /*
-    #swagger.description = 'READ deciduous trees.'
+    #swagger.description = 'READ heat tolerant grasses. /grasses/heatTolerant/true or /grasses/heatTolerant/false'
   */
   const grass = await Grass.find({ heatTolerant: req.params.heatTolerant });
   res.status(200).json({
@@ -32,7 +32,7 @@ const getGrassByHeatTolerant = catchAsync(async (req, res) => {
 
 const getGrassById = catchAsync(async (req, res, next) => {
   /*
-  #swagger.description = 'READ a specific tree by id.'
+  #swagger.description = 'READ a specific grass by id.'
 */
   if (!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Use a valid id to find desired grass.');
@@ -56,7 +56,7 @@ const addGrass = catchAsync(async (req, res, next) => {
   const grass = new Grass({
     name: req.body.name,
     heatTolerant: req.body.heatTolerant,
-    coldTolerant: req.body.coldtolerant,
+    coldTolerant: req.body.coldTolerant,
     droughtTolerant: req.body.droughtTolerant,
     shadeTolerant: req.body.shadeTolerant,
     growingSpeed: req.body.growingSpeed,
@@ -80,7 +80,7 @@ const updateGrass = catchAsync(async (req, res) => {
   const changeGrass = {
     name: req.body.name,
     heatTolerant: req.body.heatTolerant,
-    coldTolerant: req.body.coldtolerant,
+    coldTolerant: req.body.coldTolerant,
     droughtTolerant: req.body.droughtTolerant,
     shadeTolerant: req.body.shadeTolerant,
     growingSpeed: req.body.growingSpeed,

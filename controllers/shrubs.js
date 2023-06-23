@@ -20,7 +20,7 @@ const getAllShrubs = catchAsync(async (req, res) => {
 
 const getShrubsByLightRequirement = catchAsync(async (req, res) => {
   /*
-  #swagger.description = 'READ shrubs with specified light requirement (full sun, part shade).'
+  #swagger.description = 'READ shrubs with specified light requirement /shrubs/sunlight/(full sun, part shade, shade).'
 */
   const shrubs = await Shrubs.find({ sunlight: req.params.sunlight });
   res.status(200).json({

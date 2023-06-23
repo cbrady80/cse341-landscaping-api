@@ -45,12 +45,15 @@ router.use('/grasses', require('./grasses'));
 //USE request for FLOWERS
 router.use('/flowers', require('./flowers'));
 
+//USE request for USERS
+//router.use('/users', require('./users'));
+
 // USE request for HOME page
 router.use(
   '/',
   (docData = (req, res) => {
     let docData = {
-      title: 'HOME PAGE',
+      title: 'HOME PAGE - navigate to /api-docs to see api documentation',
       documentationURL: 'https://github.com/cbrady80/cse341-landscaping-api',
     };
     res.send(docData);

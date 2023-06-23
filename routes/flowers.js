@@ -6,9 +6,12 @@ const flowersController = require('../controllers/flowers');
 
 router.get('/', flowersController.getAllFlowers);
 
-router.get('/:sunlight', flowersController.getFlowersByLightRequirement);
+router.get(
+  '/sunlight/:sunlight',
+  flowersController.getFlowersByLightRequirement
+);
 
-router.get('/:colors', flowersController.getFlowersByColor);
+router.get('/color/:colors', flowersController.getFlowersByColor);
 
 router.get('/:id', flowersController.getFlowersById);
 
