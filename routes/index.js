@@ -46,7 +46,7 @@ router.use('/grasses', require('./grasses'));
 router.use('/flowers', require('./flowers'));
 
 //USE request for USERS
-//router.use('/users', require('./users'));
+router.use('/users', require('./users'));
 
 // USE request for HOME page
 router.use(

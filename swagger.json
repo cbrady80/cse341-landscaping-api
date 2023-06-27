@@ -75,7 +75,7 @@
         }
       }
     },
-    "/trees/{leafType}": {
+    "/trees/leafType/{leafType}": {
       "get": {
         "description": "READ deciduous or coniferous trees /trees/deciduous or /trees/coniferous.",
         "parameters": [
@@ -196,9 +196,9 @@
         }
       }
     },
-    "/shrubs/{sunlight}": {
+    "/shrubs/sunlight/{sunlight}": {
       "get": {
-        "description": "READ shrubs with specified light requirement (full sun, part shade).",
+        "description": "READ shrubs with specified light requirement /shrubs/sunlight/(full sun, part shade, shade).",
         "parameters": [
           {
             "name": "sunlight",
@@ -368,7 +368,7 @@
                 "heatTolerant": {
                   "example": "any"
                 },
-                "coldtolerant": {
+                "coldTolerant": {
                   "example": "any"
                 },
                 "droughtTolerant": {
@@ -394,9 +394,9 @@
         }
       }
     },
-    "/grasses/{heatTolerant}": {
+    "/grasses/heatTolerant/{heatTolerant}": {
       "get": {
-        "description": "READ deciduous trees.",
+        "description": "READ heat tolerant grasses. /grasses/heatTolerant/true or /grasses/heatTolerant/false",
         "parameters": [
           {
             "name": "heatTolerant",
@@ -414,7 +414,7 @@
     },
     "/grasses/{id}": {
       "get": {
-        "description": "READ a specific tree by id.",
+        "description": "READ a specific grass by id.",
         "parameters": [
           {
             "name": "id",
@@ -453,7 +453,7 @@
                 "heatTolerant": {
                   "example": "any"
                 },
-                "coldtolerant": {
+                "coldTolerant": {
                   "example": "any"
                 },
                 "droughtTolerant": {
@@ -549,9 +549,9 @@
         }
       }
     },
-    "/flowers/{sunlight}": {
+    "/flowers/sunlight/{sunlight}": {
       "get": {
-        "description": "READ flowers with specified light requirement (full sun, part shade).",
+        "description": "READ flowers with specified light requirement /flowers/sunlight/(full sun, part shade, shade).",
         "parameters": [
           {
             "name": "sunlight",
@@ -567,7 +567,7 @@
         }
       }
     },
-    "/flowers/{colors}": {
+    "/flowers/color/{colors}": {
       "get": {
         "description": "READ flowers with specified color.",
         "parameters": [
@@ -664,6 +664,17 @@
           },
           "400": {
             "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/users/": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
