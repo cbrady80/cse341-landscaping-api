@@ -43,5 +43,5 @@ process.on('uncaughtException', (err, origin) => {
 
 mongodb.connectToMongo();
 
-app.listen(port);
+module.exports = app.listen(port);
 console.log(`Listening on ${port}`);
