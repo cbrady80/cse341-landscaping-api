@@ -20,3 +20,5 @@ From Marc 6/22: I deployed our project to https://landscapingapi.onrender.com an
 6/26: Marc implemented unit testing using Jest on the tree routes. Jest and supertest dependencies were installed. package.json was modified to handle the npm run test command. A jest.config was created. app.js was modified to export the server connection to Jest. A __tests__ directory was created to hold all of the unit test files. index.test.js was created just to see if Jest was working. trees.test.js was created to test all of the tree routes.  The put, post, and delete route tests were turned off for now since they modify data. ( turn off test with it.skip()  )
 
 FROM EMILY 6/26: I added the test file for shrubs. There's a strange error with the get all shrubs route. It looks like the problem is with the port already being in use. I don't understand why it's just causing an error on that specific route. I will look at this later after I've had a good night's sleep. If anyone looks at this before I do and sees anything obvious, please let me know. Thanks.
+
+From Daniel 6/27 I added the test file for grasses.  I will have to do the testing after I read and catch up on jest.
