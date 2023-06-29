@@ -1,7 +1,13 @@
 const request = require('supertest');
+const mongoose = require('mongoose');
 const app = require('../app');
+// const { server } = require('../app');
 
 describe('Shrub Routes', () => {
+  // afterEach(() => {
+  //   mongoose.connection.close();
+  //   app.close();
+  // });
   describe('GET /shrubs', () => {
     it('should return all shrubs', async () => {
       const response = await request(app).get('/shrubs');
@@ -22,7 +28,7 @@ describe('Shrub Routes', () => {
   });
   describe('GET /shrubs/sunlight/:sunlight', () => {
     it('should return all part shade shrubs', async () => {
-      const response = await request(app).get('/shrubs/sunlight/part%20shade');//Looked on api-doc to see how the space was rendered in the URL; hence the %20
+      const response = await request(app).get('/shrubs/sunlight/part%20shade');
       expect(response.status).toBe(200);
       expect(response.body).toBeDefined();
       expect(response.body.status).toBe('success');
@@ -59,9 +65,7 @@ describe('Shrub Routes', () => {
       expect(response.status).toBe(200);
       expect(response.body).toBeDefined();
       expect(response.body.status).toBe('success');
-      expect(response.body.data.shrub.name).toBe(
-        'Updated Bogus Shrub'
-      );
+      expect(response.body.data.shrub.name).toBe('Updated Bogus Shrub');
     });
   });
   describe('DELETE /shrubs/delete/:id', () => {
