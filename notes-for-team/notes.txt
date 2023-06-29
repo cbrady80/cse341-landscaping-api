@@ -24,3 +24,5 @@ FROM EMILY 6/26: I added the test file for shrubs. There's a strange error with 
 From Daniel 6/27 I added the test file for grasses.  I will have to do the testing after I read and catch up on jest.
 
 From Marc 6/29. Put all test routes into one file routes.test.js.  Found and fixed one typo in flowers.js controller so, POST a New Flower is now working. All of the GET routes are passing the test. Hopefully we can each fully test all of routes we each created. Changed flowers.test.js to flowers.js and put it in TEMP folder with the other test files. Had to change the file names because Jest finds all of the files that have .test.js in them.
+
+From Marc 6/29 - Repaired the grasses POST route. grasses.js controller addGrass now working.

@@ -49,7 +49,7 @@ const addGrass = catchAsync(async (req, res, next) => {
   /*
   #swagger.description = 'CREATE a new Grass.'
 */
-  if (!req.body.common_name) {
+  if (!req.body.name) {
     res.status(400).send({ message: 'Content cannot be empty!' });
     return;
   }
