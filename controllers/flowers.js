@@ -73,7 +73,7 @@ const addFlowers = catchAsync(async (req, res, next) => {
     waterRequirement: req.body.waterRequirement,
   });
 
-  const newFlowers = await Flowers.create(flowers);
+  const newflowers = await Flowers.create(flowers);
   res.status(201).json({
     status: 'success',
     data: { flowers: newflowers },

@@ -12,9 +12,7 @@ describe('Flower Routes', () => {
   });
   describe('GET /flowers/:id', () => {
     test('it should return one flower', async () => {
-      const res = await request(app).get(
-        '/flowers/649116ea9b4e0bbe9c801f57'
-      );
+      const res = await request(app).get('/flowers/649116ea9b4e0bbe9c801f57');
       expect(res.status).toBe(200);
       expect(res.body).toBeDefined();
       expect(res.body.data.flowers._id).toBe('649116ea9b4e0bbe9c801f57');
@@ -22,7 +20,7 @@ describe('Flower Routes', () => {
   });
   describe('GET /flowers/sunlight/:sunlight', () => {
     test('it should return all part shade flowers', async () => {
-      const res = await request(app).get('/flowers/sunlight/part%20shade');//Looked on api-doc to see how the space was rendered in the URL; hence the %20
+      const res = await request(app).get('/flowers/sunlight/part%20shade'); //Looked on api-doc to see how the space was rendered in the URL; hence the %20
       expect(res.status).toBe(200);
       expect(res.body).toBeDefined();
       expect(res.body.status).toBe('success');
@@ -41,7 +39,7 @@ describe('Flower Routes', () => {
       const res = await request(app)
         .post('/flowers')
         .send({
-          name: 'A Test Flower',
+          name: 'A Test Flower 2',
           growingZones: '5-8',
           sunlight: ['part shade'],
           colors: ['red', 'pink', 'yellow', 'purple'],
@@ -50,7 +48,7 @@ describe('Flower Routes', () => {
       expect(res.status).toBe(201);
       expect(res.body).toBeDefined();
       expect(res.body.status).toBe('success');
-      expect(res.body.data.flowers.name).toBe('A Test Flower');
+      expect(res.body.data.flowers.name).toBe('A Test Flower 2');
     });
   });
   describe('PUT /flowers/:id to update flowers', () => {
@@ -67,16 +65,12 @@ describe('Flower Routes', () => {
       expect(res.status).toBe(200);
       expect(res.body).toBeDefined();
       expect(res.body.status).toBe('success');
-      expect(res.body.data.flowers.name).toBe(
-        'UPDATED Test Flower'
-      );
+      expect(res.body.data.flowers.name).toBe('UPDATED Test Flower');
     });
   });
   describe('DELETE /flowers/:id', () => {
     test.skip('it should delete one flower', async () => {
-      const res = await request(app).delete(
-        '/flowers/649a...ace5'
-      );
+      const res = await request(app).delete('/flowers/649a...ace5');
       expect(res.status).toBe(204);
       expect(res.body).toBeDefined();
       expect(res.body.data).toBe(undefined);
