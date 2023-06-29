@@ -61,7 +61,7 @@ const addFlowers = catchAsync(async (req, res, next) => {
   /*
   #swagger.description = 'CREATE a new flower.'
 */
-  if (!req.body.common_name) {
+  if (!req.body.name) {
     res.status(400).send({ message: 'Content cannot be empty!' });
     return;
   }
