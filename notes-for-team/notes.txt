@@ -30,3 +30,5 @@ From Marc 6/29 - Repaired the grasses POST route. grasses.js controller addGrass
 From Marc 6/30 - created user model, user routes, user controller, and authController. Authcontroller has some references to JWT (jsonwebtokens) which will likely have to be removed when we switch to OAuth instead of JWT. Installed 2 dependencies: validator and jsonwebtoken. Tested all user routes and updated swagger docs.
 
 From Daniel 6/30 I added the test file for users I put it in the temp folder.  I also added all of them to the routes.test.js file in the _tests_ folder
+
+From Marc 7/2 changed a few things in routes.test.js to get user tests working.
