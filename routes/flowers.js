@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const flowersController = require('../controllers/flowers');
-// const { ensureAuth } = require('../controllers/auth');
+const checkAuth = require('../controllers/authController');
 
 router.get('/', flowersController.getAllFlowers);
 
@@ -15,11 +15,10 @@ router.get('/color/:colors', flowersController.getFlowersByColor);
 
 router.get('/:id', flowersController.getFlowersById);
 
-// router.post('/', ensureAuth, flowersController.addFlowers);
-router.post('/', flowersController.addFlowers);
-// router.put('/:id', ensureAuth, flowersController.updateFlowers);
-router.put('/:id', flowersController.updateFlowers);
-// router.delete('/:id', ensureAuth, flowersController.deleteFlowers);
-router.delete('/:id', flowersController.deleteFlowers);
+router.post('/', checkAuth.auth, flowersController.addFlowers);
+
+router.put('/:id', checkAuth.auth, flowersController.updateFlowers);
+
+router.delete('/:id', checkAuth.auth, flowersController.deleteFlowers);
 
 module.exports = router;

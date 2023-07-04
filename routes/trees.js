@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const treesController = require('../controllers/trees');
-// const { ensureAuth } = require('../controllers/auth');
+const checkAuth = require('../controllers/authController');
 
 router.get('/', treesController.getAllTrees);
 
@@ -10,11 +10,10 @@ router.get('/leafType/:leafType', treesController.getTreesByLeafType);
 
 router.get('/:id', treesController.getTreeById);
 
-// router.post('/', ensureAuth, treesController.addTree);
-router.post('/', treesController.addTree);
-// router.put('/:id', ensureAuth, treesController.updateTree);
-router.put('/:id', treesController.updateTree);
-// router.delete('/:id', ensureAuth, treesController.deleteTree);
-router.delete('/:id', treesController.deleteTree);
+router.post('/', checkAuth.auth, treesController.addTree);
+
+router.put('/:id', checkAuth.auth, treesController.updateTree);
+
+router.delete('/:id', checkAuth.auth, treesController.deleteTree);
 
 module.exports = router;

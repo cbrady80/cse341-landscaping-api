@@ -1,12 +1,7 @@
 // On my last assignment, this is how the TA walked me through OAuth.
 // My main app.js file looked like this:
 
-const express = require('express');
-const bodyParser = require('body-parser');
-const mongodb = require('./db/connect');
 
-const port = process.env.PORT || 8080;
-const app = express();
 const session = require('express-session');
 const axios = require('axios');
 app.use(session({
@@ -75,7 +70,7 @@ const checkAuth = (req, res, next) => {
       next();
     }
     else {
-      throw new Error("Please log in.");
+      throw new Error("Please log in by going to https://www.landscapingapi.onrender.com/login");
     }
   }
   catch(err) {res.status(500).json({ message: err.message })};

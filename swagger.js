@@ -5,10 +5,10 @@ const doc = {
     title: 'Landscaping API',
     description: 'A collection of trees, shrubs, grasses, and flowers',
   },
-  // host: 'landscapingapi.onrender.com',
-  // schemes: ['https'],
-  host: 'localhost:8000',
-  schemes: ['http'],
+  host: 'landscapingapi.onrender.com',
+  schemes: ['https'],
+  // host: 'localhost:8000',
+  // schemes: ['http'],
 };
 
 const outputFile = './swagger.json';
