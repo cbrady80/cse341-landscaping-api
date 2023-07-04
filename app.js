@@ -29,19 +29,19 @@ app.use(
 );
 
 app
-  .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+  // .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
   .use(bodyParser.json())
   .use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader(
-      'Access-Control-Allow-Headers',
-      'Origin, X-Requested-With, Content-Type, Accept, Z-Key'
-    );
-    res.setHeader('Content-Type', 'application/json');
-    res.setHeader(
-      'Access-Control-Allow-Methods',
-      'GET, POST, PUT, DELETE, OPTIONS'
-    );
+    // res.setHeader(
+    //   'Access-Control-Allow-Headers',
+    //   'Origin, X-Requested-With, Content-Type, Accept, Z-Key'
+    // );
+    // res.setHeader('Content-Type', 'application/json');
+    // res.setHeader(
+    //   'Access-Control-Allow-Methods',
+    //   'GET, POST, PUT, DELETE, OPTIONS'
+    // );
     next();
   })
   .use('/', require('./routes')); // Calls the routes to view the data
