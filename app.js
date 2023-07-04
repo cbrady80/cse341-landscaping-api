@@ -15,7 +15,7 @@ const port = process.env.PORT || 8000;
 app.enable('trust proxy');
 
 //Logging responses in terminal - handy for dev purposes
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 
 //For authorizing users:
 const session = require('express-session');

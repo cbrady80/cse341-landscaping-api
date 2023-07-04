@@ -2,18 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const shrubsController = require('../controllers/shrubs');
-// const checkAuth = require('../controllers/authController');
-const checkAuth = (req, res, next) => {
-  try{
-    if (req.session.token) {
-      next();
-    }
-    else {
-      throw new Error("Please log in.");
-    }
-  }
-  catch(err) {res.status(500).json({ message: err.message })};
-}
+const checkAuth = require('../controllers/authController');
 
 //Get all shrubs in database
 router.get('/', shrubsController.getAllShrubs);
@@ -22,10 +11,10 @@ router.get('/sunlight/:sunlight', shrubsController.getShrubsByLightRequirement);
 //Get a specific shrub by id
 router.get('/:id', shrubsController.getShrubById);
 
-router.post('/addShrub', checkAuth, shrubsController.addShrub);
+router.post('/addShrub', checkAuth.auth, shrubsController.addShrub);
 
-router.put('/update/:id', checkAuth, shrubsController.updateShrub);
+router.put('/update/:id', checkAuth.auth, shrubsController.updateShrub);
 
-router.delete('/delete/:id', checkAuth, shrubsController.deleteShrub);
+router.delete('/delete/:id', checkAuth.auth, shrubsController.deleteShrub);
 
 module.exports = router;
