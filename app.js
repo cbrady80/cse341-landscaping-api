@@ -52,7 +52,7 @@ app
 //Users must be logged in to change database:
 app.get('/login', (req, res) => {
   res.redirect(
-    `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}`
+    `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}&prompt=consent`
   )
 })
 //That last part &prompt=consent is what helps when someone logs

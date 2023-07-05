@@ -5,7 +5,7 @@
     "description": "A collection of trees, shrubs, grasses, and flowers",
     "version": "1.0.0"
   },
-  "host": "landscapingapi.onrender.com",
+  "host": "landscapeproject.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
