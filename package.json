@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest --verbose",
     "test:watch": "jest --verbose --watch",
-    "start": "nodemon app.js",
+    "start": "node app.js",
+    "dev-start": "nodemon app.js",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
