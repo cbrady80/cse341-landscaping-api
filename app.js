@@ -68,8 +68,7 @@ app.get('/callback', (req, res) => {
   const opts = {
     headers: { accept: 'application/json' }
   }
-  axios
-    .post('https://github.com/login/oauth/access_token', body, opts)
+  axios.post('https://github.com/login/oauth/access_token', body, opts)
     .then((res2) => {
       req.session.token = res2.data.access_token;
       res.redirect('/api-docs')
