@@ -12,7 +12,7 @@ const app = express();
 // Save a port number
 const port = process.env.PORT || 8000;
 
-app.enable('trust proxy');
+//app.enable('trust proxy');
 
 //Logging responses in terminal - handy for dev purposes
 app.use(morgan('dev'));
