@@ -58,8 +58,8 @@ process.on('uncaughtException', (err, origin) => {
 app.get('/login', (req, res) => {
   res.redirect(
     `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}&prompt=consent`
-  );
-});
+  )
+})
 //That last part &prompt=consent is what helps when someone logs
 // out and then logs back in again so that it will prompt for authorization
 // again even if they are still signed in to Github somewhere.
@@ -69,10 +69,10 @@ app.get('/callback', (req, res) => {
     client_id: process.env.GITHUB_CLIENT_ID,
     client_secret: process.env.GITHUB_CLIENT_SECRET,
     code,
-  };
+  }
   const opts = {
     headers: { accept: 'application/json' },
-  };
+  }
   axios
     .post('https://github.com/login/oauth/access_token', body, opts)
     .then((res2) => {
@@ -80,12 +80,12 @@ app.get('/callback', (req, res) => {
       res.redirect('/api-docs');
     })
     .catch((err) => res.status(500).json({ message: err.message }));
-});
+})
 //So users can logout:
 app.get('/logout', (req, res) => {
   req.session.token = null;
   res.redirect('/api-docs');
-});
+})
 
 mongodb.connectToMongo();
 
