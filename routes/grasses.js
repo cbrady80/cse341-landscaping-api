@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const grassController = require('../controllers/grasses');
-const checkAuth = require('../controllers/authController');
+const authController = require('../controllers/authController');
 
 router.get('/', grassController.getAllGrass);
 
@@ -13,10 +13,10 @@ router.get(
   grassController.getGrassByHeatTolerant
 );
 
-router.post('/', checkAuth.auth, grassController.addGrass);
+router.post('/', authController.checkAuth, grassController.addGrass);
 
-router.put('/:id', checkAuth.auth, grassController.updateGrass);
+router.put('/:id', authController.checkAuth, grassController.updateGrass);
 
-router.delete('/:id', checkAuth.auth, grassController.deleteGrass);
+router.delete('/:id', authController.checkAuth, grassController.deleteGrass);
 
 module.exports = router;

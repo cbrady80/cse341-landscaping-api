@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const shrubsController = require('../controllers/shrubs');
-const checkAuth = require('../controllers/authController');
+const authController = require('../controllers/authController');
 
 //Get all shrubs in database
 router.get('/', shrubsController.getAllShrubs);
@@ -11,10 +11,10 @@ router.get('/sunlight/:sunlight', shrubsController.getShrubsByLightRequirement);
 //Get a specific shrub by id
 router.get('/:id', shrubsController.getShrubById);
 
-router.post('/addShrub', checkAuth.auth, shrubsController.addShrub);
+router.post('/addShrub', authController.checkAuth, shrubsController.addShrub);
 
-router.put('/update/:id', checkAuth.auth, shrubsController.updateShrub);
+router.put('/update/:id', authController.checkAuth, shrubsController.updateShrub);
 
-router.delete('/delete/:id', checkAuth.auth, shrubsController.deleteShrub);
+router.delete('/delete/:id', authController.checkAuth, shrubsController.deleteShrub);
 
 module.exports = router;

@@ -5,7 +5,7 @@ const doc = {
     title: 'Landscaping API',
     description: 'A collection of trees, shrubs, grasses, and flowers',
   },
-  host: 'landscapingapi.onrender.com',
+  host: 'landscapeproject.onrender.com',
   schemes: ['https'],
   // host: 'localhost:8000',
   // schemes: ['http'],
