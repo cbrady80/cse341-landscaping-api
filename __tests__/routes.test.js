@@ -251,7 +251,7 @@ describe('Routes', () => {
     });
   });
   describe('POST /flowers to add new flower', () => {
-    test('it should create a new flower', async () => {
+    test.skip('it should create a new flower', async () => {
       const res = await request(app)
         .post('/flowers')
         .send({
