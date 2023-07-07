@@ -9,7 +9,7 @@ const checkAuth = (req, res, next) => {
       next();
     }
     else {
-      throw new Error("Please log in by going to https://www.landscapeproject.onrender.com/login");
+      throw new Error("Please log in by going to https://landscapeproject.onrender.com/login");
     }
   }
   catch(err) {res.status(500).json({ message: err.message })};
