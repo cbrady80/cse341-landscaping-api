@@ -4,7 +4,7 @@
   "description": "Landscaping API",
   "main": "app.js",
   "scripts": {
-    "test": "jest --verbose",
+    "test": "jest --verbose --forceExit",
     "test:watch": "jest --verbose --watch",
     "start": "node app.js",
     "dev-start": "nodemon app.js",
