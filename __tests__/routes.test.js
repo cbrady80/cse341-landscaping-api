@@ -29,7 +29,7 @@ describe('Routes', () => {
     });
   });
   describe('POST /trees to add new tree', () => {
-    it('should create new tree', async () => {
+    it('should not create a new tree because the user is not logged in', async () => {
       const response = await request(app)
         .post('/trees')
         .send({
@@ -51,7 +51,7 @@ describe('Routes', () => {
     });
   });
   describe('PUT /trees/:id to update tree', () => {
-    it('should update a tree', async () => {
+    it('should not update a tree because the user is not logged in', async () => {
       const response = await request(app)
         .put('/trees/64910ab39b4e0bbe9c801f55')
         .send({
@@ -75,7 +75,7 @@ describe('Routes', () => {
     });
   });
   describe('DELETE /trees/:id', () => {
-    it('should delete one tree', async () => {
+    it('should not delete a tree because the user is not logged in', async () => {
       const response = await request(app).delete(
         '/trees/6499bf44875d29951c818ff8'
       );
@@ -112,7 +112,7 @@ describe('Routes', () => {
     });
   });
   describe('POST /shrubs/addShrub to add new shrub', () => {
-    it('should create new shrub', async () => {
+    it('should not create a new shrub because the user is not logged in', async () => {
       const response = await request(app)
         .post('/shrubs/addShrub')
         .send({
@@ -130,7 +130,7 @@ describe('Routes', () => {
     });
   });
   describe('PUT /shrubs/update/:id to update shrub', () => {
-    it('should update a shrub', async () => {
+    it('should not update a shrub because the user is not logged in', async () => {
       const response = await request(app)
         .put('/shrubs/update/649a58d85fd44d22590eace5')
         .send({
@@ -148,7 +148,7 @@ describe('Routes', () => {
     });
   });
   describe('DELETE /shrubs/:id', () => {
-    it('should delete one shrub', async () => {
+    it('should not delete a shrub because the user is not logged in', async () => {
       const response = await request(app).delete(
         '/shrubs/649a58d85fd44d22590eace5'
       );
@@ -185,7 +185,7 @@ describe('Routes', () => {
     });
   });
   describe('POST /grasses to add new grasses', () => {
-    it('should create new grass', async () => {
+    it('should not create a new grass because the user is not logged in', async () => {
       const response = await request(app).post('/grasses').send({
         name: 'A new grass',
         heatTolerant: 'true',
@@ -202,7 +202,7 @@ describe('Routes', () => {
     });
   });
   describe('PUT /grasses/:id to update grass', () => {
-    it('should update a grass', async () => {
+    it('should not update a grass because the user is not logged in', async () => {
       const response = await request(app)
         .put('/grasses/649117b69b4e0bbe9c801f60')
         .send({
@@ -217,7 +217,7 @@ describe('Routes', () => {
     });
   });
   describe('DELETE /grasses/:id', () => {
-    it('should delete one grass', async () => {
+    it('should not delete one grass because the user is not logged in', async () => {
       const response = await request(app).delete(
         '/grasses/649117b69b4e0bbe9c801f65'
       );
@@ -260,7 +260,7 @@ describe('Routes', () => {
     });
   });
   describe('POST /flowers to add new flower', () => {
-    test('it should create a new flower', async () => {
+    test('it should not create a new flower because the user is not logged in', async () => {
       const res = await request(app)
         .post('/flowers')
         .send({
@@ -278,7 +278,7 @@ describe('Routes', () => {
     });
   });
   describe('PUT /flowers/:id to update flowers', () => {
-    test('it should update a flower', async () => {
+    test('it should not update a flower because the user is not logged in', async () => {
       const res = await request(app)
         .put('/flowers/649a58d...5')
         .send({
@@ -296,7 +296,7 @@ describe('Routes', () => {
     });
   });
   describe('DELETE /flowers/:id', () => {
-    test('it should delete one flower', async () => {
+    test('it should not delete one flower because the user is not logged in', async () => {
       const res = await request(app).delete('/flowers/649a...ace5');
       expect(res.status).toBe(500);
       // expect(res.status).toBe(204);
