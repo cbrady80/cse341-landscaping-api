@@ -96,11 +96,11 @@ describe('Routes', () => {
   describe('GET /shrubs/:id', () => {
     it('should return one shrub', async () => {
       const response = await request(app).get(
-        '/shrubs/649117c59b4e0bbe9c801f67'
+        '/shrubs/649117c59b4e0bbe9c801f68'
       );
       expect(response.status).toBe(200);
       expect(response.body).toBeDefined();
-      expect(response.body.data.shrub._id).toBe('649117c59b4e0bbe9c801f67');
+      expect(response.body.data.shrub._id).toBe('649117c59b4e0bbe9c801f68');
     });
   });
   describe('GET /shrubs/sunlight/:sunlight', () => {
